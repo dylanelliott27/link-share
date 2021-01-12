@@ -1,8 +1,7 @@
 const Link = require('../models/link');
 
-module.exports = function createLink(){
+module.exports = function createLink(url){
 
-    global.linkList.addLink(new Link("test", "test"));
+    global.linkList.addLink(new Link(url, "testdate"));
 
-    global.linkList.getLinks();
 }

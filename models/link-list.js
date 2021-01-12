@@ -3,9 +3,7 @@ function LinkList(){
 }
 
 LinkList.prototype.getLinks = function(){
-    this.links.forEach(link => {
-        console.log(link.getUrl());
-    })
+    return this.links;
 }
 
 LinkList.prototype.addLink = function(link){

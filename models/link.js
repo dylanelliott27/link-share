@@ -1,6 +1,6 @@
-function Link(url, owner){
+function Link(url, expiry){
     this.url = url;
-    this.owner = owner;
+    this.expiry = expiry;
 }
 
 Link.prototype.getUrl = function(){
