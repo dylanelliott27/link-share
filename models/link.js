@@ -10,3 +10,6 @@ Link.prototype.getUrl = function(){
 Link.prototype.getOwner = function(){
     return this.owner;
 }
+
+
+module.exports = Link;
