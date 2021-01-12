@@ -6,6 +6,11 @@
     <title>LinkShare</title>
 </head>
 <body>
+    <h1>Type in code:</h1>
+    <input type="text" id="code">
+    <button id="findcode">Find</button>
+
+    <p style="color: red" id="codeinfo"></p>
     <h1>Link Share</h1>
 
     <input id="link" type="text">
@@ -17,7 +22,9 @@
         const addLinkButton = document.getElementById('addlink');
         const getLinksButton = document.getElementById('getlinks');
         const userEnteredLink = document.getElementById('link');
-
+        const userEnteredCode = document.getElementById('code');
+        const findCodeButton = document.getElementById('findcode');
+        const foundUrlParagraph = document.getElementById('codeinfo');
 
         addLinkButton.addEventListener('click', _ => {
             fetch('http://localhost:3000/createlink', {
@@ -31,6 +38,15 @@
         getLinksButton.addEventListener('click', _ => {
             fetch('http://localhost:3000/getlinks')
             .then(res => console.log(res));
+        })
+
+        findCodeButton.addEventListener('click', () => {
+            fetch('http://localhost:3000/findlink', {
+                method: 'POST',
+                body: userEnteredCode.value
+            })
+            .then(res => console.log(res));
+            
         })
     </script>
 </body>
